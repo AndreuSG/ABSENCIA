@@ -124,6 +124,10 @@ Create unique page layouts for any type of content using a powerful layout build
 
 Each block is fully designed and built into the front-end website that comes with this template. See [Website](#website) for more details.
 
+The **Hero** block can be placed anywhere within a page's layout. Configure the
+image, title and subtitle in the CMS and then drag the block to the desired
+position when building a page.
+
 ## Lexical editor
 
 A deep editorial experience that allows complete freedom to focus just on writing content without breaking out of the flow with support for Payload blocks, media, links and other features provided out of the box. See [Lexical](https://payloadcms.com/docs/rich-text/overview) docs.
