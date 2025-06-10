@@ -150,6 +150,8 @@ export interface Page {
   title: string;
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    title?: string | null;
+    subtitle?: string | null;
     richText?: {
       root: {
         type: string;
@@ -741,6 +743,8 @@ export interface Form {
  */
 export interface HeroBlock {
   type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+  title?: string | null;
+  subtitle?: string | null;
   richText?: {
     root: {
       type: string;
@@ -1077,6 +1081,8 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         type?: T;
+        title?: T;
+        subtitle?: T;
         richText?: T;
         links?:
           | T
@@ -1210,6 +1216,8 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface HeroBlockSelect<T extends boolean = true> {
   type?: T;
+  title?: T;
+  subtitle?: T;
   richText?: T;
   links?:
     | T
