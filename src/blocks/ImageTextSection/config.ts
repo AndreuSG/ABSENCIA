@@ -11,6 +11,10 @@ export const ImageTextSection: Block = {
   interfaceName: 'ImageTextSectionBlock',
   fields: [
     {
+      name: 'title',
+      type: 'text',
+    },
+    {
       name: 'media',
       type: 'upload',
       relationTo: 'media',

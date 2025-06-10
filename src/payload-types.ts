@@ -191,7 +191,15 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | ImageTextSectionBlock | HeroBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | HeroBlock
+    | ImageTextSectionBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -782,6 +790,7 @@ export interface HeroBlock {
  * via the `definition` "ImageTextSectionBlock".
  */
 export interface ImageTextSectionBlock {
+  title?: string | null;
   media: number | Media;
   content?: {
     root: {
@@ -1226,6 +1235,7 @@ export interface HeroBlockSelect<T extends boolean = true> {
  * via the `definition` "ImageTextSectionBlock_select".
  */
 export interface ImageTextSectionBlockSelect<T extends boolean = true> {
+  title?: T;
   media?: T;
   content?: T;
   reverse?: T;
