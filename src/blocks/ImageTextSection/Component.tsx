@@ -4,7 +4,7 @@ import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { cn } from '@/utilities/ui'
 
-export const ImageTextSectionBlock: React.FC<BlockProps> = ({ media, content, reverse }) => {
+export const ImageTextSectionBlock: React.FC<BlockProps> = ({ title, media, content, reverse }) => {
   return (
     <div className="container">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -12,6 +12,7 @@ export const ImageTextSectionBlock: React.FC<BlockProps> = ({ media, content, re
           <Media resource={media} />
         </div>
         <div className="md:w-1/2">
+          {title && <h3 className="text-2xl font-semibold mb-4">{title}</h3>}
           {content && <RichText data={content} enableGutter={false} />}
         </div>
       </div>
