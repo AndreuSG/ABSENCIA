@@ -790,6 +790,7 @@ export interface HeroBlock {
  * via the `definition` "ImageTextSectionBlock".
  */
 export interface ImageTextSectionBlock {
+  title?: string | null;
   media: number | Media;
   content?: {
     root: {
@@ -1234,6 +1235,7 @@ export interface HeroBlockSelect<T extends boolean = true> {
  * via the `definition` "ImageTextSectionBlock_select".
  */
 export interface ImageTextSectionBlockSelect<T extends boolean = true> {
+  title?: T;
   media?: T;
   content?: T;
   reverse?: T;
