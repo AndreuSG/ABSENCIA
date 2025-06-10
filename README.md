@@ -319,7 +319,3 @@ You can also deploy your app manually, check out the [deployment documentation](
 ## Questions
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
-
-### Adding a footer image
-
-Place your image file in the `public` directory, for example `public/footer-image.png`. The footer component references this path by default. Replace the file with your own small image to update the footer graphic.
