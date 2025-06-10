@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const NAV_ITEMS = [
-  { href: '/inici', label: 'Inici' },
+  { href: '/', label: 'Inici' },
   { href: '/qui-soc', label: 'Qui soc?' },
   { href: '/serveis', label: 'Serveis' },
   { href: '/productes', label: 'Productes' },
