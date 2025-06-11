@@ -6,6 +6,7 @@ import { Archive } from '../../blocks/ArchiveBlock/config'
 import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
+import { ContactFormBlock } from '../../blocks/ContactFormBlock/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
@@ -83,6 +84,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 MediaBlock,
                 Archive,
                 FormBlock,
+                ContactFormBlock,
                 Hero,
                 ImageTextSection,
               ],
