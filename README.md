@@ -125,8 +125,10 @@ Create unique page layouts for any type of content using a powerful layout build
 Each block is fully designed and built into the front-end website that comes with this template. See [Website](#website) for more details.
 
 The **Hero** block can be placed anywhere within a page's layout. Configure the
-image, title and subtitle in the CMS and then drag the block to the desired
-position when building a page.
+image, title and subtitle in the CMS and drag the block to the desired
+position when building a page. Heroes no longer appear automatically at the top
+of each page and feature a wavy bottom edge. High, medium and low impact heroes
+take up roughly 65%, 45% and 20% of the viewport height respectively.
 
 ## Lexical editor
 
