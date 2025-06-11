@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
+import { Comic_Neue } from 'next/font/google'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -15,13 +16,19 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 
+const comic = Comic_Neue({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-comic-neue',
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
 
   return (
     <html
       data-theme="light"
-      className={cn(GeistSans.variable, GeistMono.variable)}
+      className={cn(GeistSans.variable, GeistMono.variable, comic.variable)}
       lang="en"
       suppressHydrationWarning
     >
