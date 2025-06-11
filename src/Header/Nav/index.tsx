@@ -13,9 +13,13 @@ const NAV_ITEMS = [
 
 export const HeaderNav: React.FC = () => {
   return (
-    <nav className="flex gap-3 items-center">
+    <nav className="flex gap-4 items-center font-clown">
       {NAV_ITEMS.map((item) => (
-        <Link key={item.href} href={item.href} className="hover:underline">
+        <Link
+          key={item.href}
+          href={item.href}
+          className="transition-transform hover:-translate-y-1 hover:text-primary"
+        >
           {item.label}
         </Link>
       ))}

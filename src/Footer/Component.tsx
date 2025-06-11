@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-border bg-white text-black">
-      <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="mt-auto border-t-4 border-primary bg-accent/10 text-foreground font-clown">
+      <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4 animate-in fade-in duration-700">
         <div className="flex items-center gap-2">
           <Image
             alt="Codiara logo"
