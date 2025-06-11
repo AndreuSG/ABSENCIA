@@ -9,6 +9,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
+import { AnimatedBlock } from '@/components/AnimatedBlock'
 
 const blockComponents = {
   content: ContentBlock,
@@ -38,9 +39,9 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div className="my-16" key={index}>
+                <AnimatedBlock className="my-16" key={index}>
                   <Block {...block} disableInnerContainer />
-                </div>
+                </AnimatedBlock>
               )
             }
           }
