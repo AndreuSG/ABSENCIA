@@ -2,24 +2,22 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
-import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
-import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { ContactFormBlock } from '@/blocks/ContactFormBlock/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
+import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
 
 const blockComponents = {
-  archive: ArchiveBlock,
   content: ContentBlock,
-  cta: CallToActionBlock,
   formBlock: FormBlock,
   contactForm: ContactFormBlock,
   mediaBlock: MediaBlock,
   hero: HeroBlock,
   imageTextSection: ImageTextSectionBlock,
+  imageGridHero: ImageGridHeroBlock,
 }
 
 export const RenderBlocks: React.FC<{
@@ -41,7 +39,6 @@ export const RenderBlocks: React.FC<{
             if (Block) {
               return (
                 <div className="my-16" key={index}>
-                  {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </div>
               )

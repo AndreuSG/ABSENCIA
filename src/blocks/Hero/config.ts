@@ -4,7 +4,7 @@ import { hero as heroField } from '@/heros/config'
 export const Hero: Block = {
   slug: 'hero',
   interfaceName: 'HeroBlock',
-  fields: heroField.fields,
+  fields: [heroField],
   labels: {
     singular: 'Hero',
     plural: 'Heros',

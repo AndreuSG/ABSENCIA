@@ -10,7 +10,7 @@ export const HeroBlock: React.FC<Props> = (props) => {
   const { className, ...heroProps } = props
   return (
     <div className={className}>
-      <RenderHero {...heroProps} />
+      <RenderHero {...heroProps} type={heroProps.hero?.type} />
     </div>
   )
 }

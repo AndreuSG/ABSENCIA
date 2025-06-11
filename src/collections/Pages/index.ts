@@ -2,14 +2,13 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock/config'
-import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { ContactFormBlock } from '../../blocks/ContactFormBlock/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
+import { ImageGridHero } from '../../blocks/ImageGridHero/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -79,14 +78,13 @@ export const Pages: CollectionConfig<'pages'> = {
               name: 'layout',
               type: 'blocks',
               blocks: [
-                CallToAction,
                 Content,
                 MediaBlock,
-                Archive,
                 FormBlock,
                 ContactFormBlock,
                 Hero,
                 ImageTextSection,
+                ImageGridHero,
               ],
               required: true,
               admin: {
