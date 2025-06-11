@@ -21,7 +21,7 @@ export const LowImpactHero: React.FC<LowImpactHeroType> = ({
   subtitle,
 }) => {
   return (
-    <div className="container mt-16">
+    <div className="container mt-16 min-h-[20vh]">
       <div className="max-w-[48rem]">
         {title && <h1 className="mb-4 text-3xl md:text-5xl">{title}</h1>}
         {subtitle && <p className="mb-4 text-lg md:text-xl">{subtitle}</p>}
