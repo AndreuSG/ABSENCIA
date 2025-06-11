@@ -9,7 +9,6 @@ import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
 import { ImageGridHero } from '../../blocks/ImageGridHero/config'
-import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -68,10 +67,6 @@ export const Pages: CollectionConfig<'pages'> = {
     {
       type: 'tabs',
       tabs: [
-        {
-          fields: [hero],
-          label: 'Hero',
-        },
         {
           fields: [
             {

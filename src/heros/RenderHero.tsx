@@ -12,12 +12,22 @@ const heroes = {
   mediumImpact: MediumImpactHero,
 }
 
-export const RenderHero: React.FC<Page['hero']> = (props) => {
+// Define the expected props type for RenderHero
+type HeroProps = {
+  type?: 'highImpact' | 'mediumImpact' | 'lowImpact' | 'none'
+  [key: string]: any
+}
+
+export const RenderHero: React.FC<HeroProps> = (props) => {
   const { type } = props || {}
 
   if (!type || type === 'none') return null
 
-  const HeroToRender = heroes[type]
+  type HeroType = keyof typeof heroes
+
+  if (!type || !(type in heroes)) return null
+
+  const HeroToRender = heroes[type as HeroType]
 
   if (!HeroToRender) return null
 

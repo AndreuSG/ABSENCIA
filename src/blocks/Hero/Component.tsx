@@ -1,16 +1,15 @@
+// src/blocks/Hero/Component.tsx
 import React from 'react'
 import { RenderHero } from '@/heros/RenderHero'
 import type { HeroBlock as HeroBlockProps } from '@/payload-types'
 
-type Props = HeroBlockProps & {
-  className?: string
-}
+type Props = HeroBlockProps & { className?: string }
 
-export const HeroBlock: React.FC<Props> = (props) => {
-  const { className, ...heroProps } = props
+export const HeroBlock: React.FC<Props> = ({ className, hero }) => {
+  if (!hero) return null
   return (
     <div className={className}>
-      <RenderHero {...heroProps} type={heroProps.hero?.type} />
+      <RenderHero {...hero} />
     </div>
   )
 }
