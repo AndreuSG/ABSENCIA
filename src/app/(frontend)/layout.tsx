@@ -12,6 +12,7 @@ import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import Balloons from '@/components/Balloons'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body>
+        <Balloons />
         <Providers>
           <AdminBar
             adminBarProps={{

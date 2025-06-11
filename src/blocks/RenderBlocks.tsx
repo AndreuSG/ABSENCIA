@@ -9,6 +9,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
+import { AnimatedBlock } from '@/components/AnimatedBlock'
 
 const blockComponents = {
   content: ContentBlock,
