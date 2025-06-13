@@ -1,14 +1,11 @@
-'use client'
-
+import { HeaderClient } from './Component.client'
+import { getCachedGlobal } from '@/utilities/getGlobals'
 import React from 'react'
-import { HeaderNav } from './Nav/index'
 
-export const Header: React.FC = () => {
-  return (
-    <header className="w-full z-10">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <HeaderNav />
-      </div>
-    </header>
-  )
+import type { Header } from '@/payload-types'
+
+export async function Header() {
+  const headerData: Header = await getCachedGlobal('header', 1)()
+
+  return <HeaderClient navItems={headerData} />
 }

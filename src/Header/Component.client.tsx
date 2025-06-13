@@ -1,4 +1,5 @@
 'use client'
+import type { Header } from '@/payload-types'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -7,7 +8,11 @@ import React, { useEffect, useState } from 'react'
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
 
-export const HeaderClient: React.FC = () => {
+interface HeaderClientProps {
+  navItems: Header
+}
+
+export const HeaderClient: React.FC<HeaderClientProps>= ({navItems}) => {
   /* Storing the value in a useState to avoid hydration errors */
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
@@ -29,7 +34,7 @@ export const HeaderClient: React.FC = () => {
         <Link href="/">
           <Logo />
         </Link>
-        <HeaderNav />
+        <HeaderNav navItems={navItems}/>
       </div>
     </div>
   )
