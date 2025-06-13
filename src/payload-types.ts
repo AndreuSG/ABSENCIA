@@ -667,6 +667,8 @@ export interface ImageTextSectionBlock {
     [k: string]: unknown;
   } | null;
   reverse?: boolean | null;
+  buttonLabel?: string | null;
+  buttonLink?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'imageTextSection';
@@ -1092,6 +1094,8 @@ export interface ImageTextSectionBlockSelect<T extends boolean = true> {
   media?: T;
   content?: T;
   reverse?: T;
+  buttonLabel?: T;
+  buttonLink?: T;
   id?: T;
   blockName?: T;
 }

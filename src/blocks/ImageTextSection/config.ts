@@ -36,6 +36,16 @@ export const ImageTextSection: Block = {
       name: 'reverse',
       type: 'checkbox',
     },
+    {
+      name: 'buttonLabel',
+      type: 'text',
+      label: 'Button Label',
+    },
+    {
+      name: 'buttonLink',
+      type: 'text',
+      label: 'Button Link (URL)',
+    },
   ],
   labels: {
     singular: 'Image Text Section',

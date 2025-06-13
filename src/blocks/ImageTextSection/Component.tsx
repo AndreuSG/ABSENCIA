@@ -1,23 +1,47 @@
+'use client'
+
 import React from 'react'
 import type { ImageTextSectionBlock as BlockProps } from '@/payload-types'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 import { cn } from '@/utilities/ui'
+import Link from 'next/link'
 
-export const ImageTextSectionBlock: React.FC<BlockProps> = ({ title, media, content, reverse }) => {
+export const ImageTextSectionBlock: React.FC<BlockProps> = ({
+  title,
+  media,
+  content,
+  reverse,
+  buttonLabel,
+  buttonLink,
+}) => {
   return (
-    <div className="container">
-      <div className="flex flex-col md:flex-row gap-8 items-center">
+    <section className="container font-poppins py-16">
+      <div className="flex flex-col md:flex-row items-center gap-12 opacity-0 animate-fade-in-up">
+        {/* Imagen */}
         <div className={cn('md:w-1/2', { 'md:order-last': reverse })}>
-          <div className="relative w-full h-64">
-            <Media resource={media} fill imgClassName="object-cover" />
+          <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:scale-105">
+            <Media resource={media} fill imgClassName="object-cover object-center" />
           </div>
         </div>
-        <div className="md:w-1/2">
-          {title && <h3 className="text-2xl font-semibold mb-4">{title}</h3>}
+
+        {/* Texto + Botón */}
+        <div className="md:w-1/2 text-center md:text-left">
+          {title && <h3 className="text-3xl font-bold text-pop-red mb-6 leading-tight">{title}</h3>}
           {content && <RichText data={content} enableGutter={false} />}
+
+          {buttonLabel && buttonLink && (
+            <div className="mt-6">
+              <Link
+                href={buttonLink}
+                className="inline-block bg-pop-red text-white px-6 py-3 rounded-full font-semibold hover:bg-pop-magenta transition-colors"
+              >
+                {buttonLabel}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
