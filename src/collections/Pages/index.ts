@@ -9,6 +9,7 @@ import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
 import { ImageGridHero } from '../../blocks/ImageGridHero/config'
+import { ImgFormBlock } from '../../blocks/ImgForm/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -21,6 +22,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import ImgForm from '@/blocks/ImgForm/Component.client'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -80,6 +82,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 Hero,
                 ImageTextSection,
                 ImageGridHero,
+                ImgFormBlock,
               ],
               required: true,
               admin: {
