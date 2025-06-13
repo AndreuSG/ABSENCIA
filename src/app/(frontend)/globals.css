@@ -14,8 +14,14 @@
   }
 
   :root {
-    --background: 60 100% 96%;
+    --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    --clr-pop-yellow: 48 100% 50%;
+    --clr-pop-magenta: 330 100% 55%;
+    --clr-pop-cyan: 190 100% 45%;
+    --clr-pop-blue: 220 100% 50%;
+    --clr-pop-red: 356 90% 55%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -103,16 +109,21 @@ html[data-theme='light'] {
 }
 
 @keyframes float-up {
-  from {
-    transform: translateY(0);
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  20% {
     opacity: 1;
   }
-  to {
-    transform: translateY(-100vh);
+  100% {
+    transform: translateY(-120vh) scale(1.2);
     opacity: 0;
   }
 }
 
-.balloon {
-  animation: float-up 4s linear forwards;
+.balloon-float {
+  animation-name: float-up;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }

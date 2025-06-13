@@ -54,6 +54,9 @@ const config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      boxShadow: {
+        comic: '4px 4px 0px 0px hsl(var(--foreground))',
+      },
       colors: {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
@@ -91,11 +94,18 @@ const config = {
         success: 'hsl(var(--success))',
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
+        'pop-yellow': 'hsl(var(--clr-pop-yellow) / <alpha-value>)',
+        'pop-magenta': 'hsl(var(--clr-pop-magenta) / <alpha-value>)',
+        'pop-cyan': 'hsl(var(--clr-pop-cyan) / <alpha-value>)',
+        'pop-blue': 'hsl(var(--clr-pop-blue) / <alpha-value>)',
+        'pop-red': 'hsl(var(--clr-pop-red) / <alpha-value>)',
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-comic-neue)', 'var(--font-geist-sans)'],
         clown: ['var(--font-comic-neue)'],
+        comic: ['var(--font-comic-neue)', 'cursive'],
+        bangers: ['"Bangers"', 'cursive'],
       },
       keyframes: {
         'accordion-down': {

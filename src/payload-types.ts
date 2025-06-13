@@ -636,48 +636,9 @@ export interface ContactFormBlock {
 export interface HeroBlock {
   hero: {
     type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
-    title?: string | null;
-    subtitle?: string | null;
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    links?:
-      | {
-          link: {
-            type?: ('reference' | 'custom') | null;
-            newTab?: boolean | null;
-            reference?:
-              | ({
-                  relationTo: 'pages';
-                  value: number | Page;
-                } | null)
-              | ({
-                  relationTo: 'posts';
-                  value: number | Post;
-                } | null);
-            url?: string | null;
-            label: string;
-            /**
-             * Choose how the link should be rendered.
-             */
-            appearance?: ('default' | 'outline') | null;
-          };
-          id?: string | null;
-        }[]
-      | null;
-    media?: (number | null) | Media;
+    desktopLarge?: (number | null) | Media;
+    desktopMedium?: (number | null) | Media;
+    mobile?: (number | null) | Media;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1115,25 +1076,9 @@ export interface HeroBlockSelect<T extends boolean = true> {
     | T
     | {
         type?: T;
-        title?: T;
-        subtitle?: T;
-        richText?: T;
-        links?:
-          | T
-          | {
-              link?:
-                | T
-                | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
-        media?: T;
+        desktopLarge?: T;
+        desktopMedium?: T;
+        mobile?: T;
       };
   id?: T;
   blockName?: T;

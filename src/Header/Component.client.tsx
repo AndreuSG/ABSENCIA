@@ -24,13 +24,13 @@ export const HeaderClient: React.FC = () => {
   }, [headerTheme])
 
   return (
-    <header className="container relative z-20" {...(theme ? { 'data-theme': theme } : {})}>
+    <div className="container relative z-20" {...(theme ? { 'data-theme': theme } : {})}>
       <div className="py-8 flex items-center justify-between animate-in fade-in duration-700">
         <Link href="/">
-          <Logo className="invert" />
+          <Logo />
         </Link>
         <HeaderNav />
       </div>
-    </header>
+    </div>
   )
 }
