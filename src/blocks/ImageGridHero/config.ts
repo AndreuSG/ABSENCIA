@@ -40,6 +40,16 @@ export const ImageGridHero: Block = {
         },
       ],
     },
+    {
+      name: 'buttonLabel',
+      type: 'text',
+      label: 'Button Label',
+    },
+    {
+      name: 'buttonLink',
+      type: 'text',
+      label: 'Button Link (URL)',
+    },
     linkGroup({
       appearances: ['default', 'outline'],
       overrides: {

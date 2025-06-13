@@ -14,6 +14,8 @@ export const Component = (props: any) => {
           className: img.className,
         })) || []
       }
+      buttonLabel={props.buttonLabel}
+      buttonLink={props.buttonLink}
       primaryButton={
         props.links?.[0] && (
           // Renderiza tu botón según tu sistema de enlaces

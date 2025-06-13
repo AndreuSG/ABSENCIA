@@ -689,6 +689,8 @@ export interface ImageGridHeroBlock {
     className?: string | null;
     id?: string | null;
   }[];
+  buttonLabel?: string | null;
+  buttonLink?: string | null;
   links?:
     | {
         link: {
@@ -1114,6 +1116,8 @@ export interface ImageGridHeroBlockSelect<T extends boolean = true> {
         className?: T;
         id?: T;
       };
+  buttonLabel?: T;
+  buttonLink?: T;
   links?:
     | T
     | {
