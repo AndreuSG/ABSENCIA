@@ -5,6 +5,8 @@ import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import { emailCcBccPlugin } from './plugins/emailCcBcc'
 
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
@@ -57,7 +59,18 @@ export default buildConfig({
       ],
     },
   },
-  // This config helps us configure global or default features that the other editors can inherit
+  email: nodemailerAdapter({
+    defaultFromAddress: process.env.EMAIL_FROM || 'noreply@localhost',
+    defaultFromName: process.env.NAME_FROM || 'Payload CMS',
+    transportOptions: {
+      host: process.env.SMTP_HOST ? process.env.SMTP_HOST : 'localhost',
+      port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587,
+      auth: {
+        user: process.env.SMTP_USER ? process.env.SMTP_USER : 'user',
+        pass: process.env.SMTP_PASS ? process.env.SMTP_PASS : 'password',
+      },
+    },
+  }),
   editor: defaultLexical,
   db: postgresAdapter({
     pool: {
@@ -69,6 +82,7 @@ export default buildConfig({
   globals: [Header, Footer],
   plugins: [
     ...plugins,
+    emailCcBccPlugin(),
     // storage-adapter-placeholder
   ],
   secret: process.env.PAYLOAD_SECRET,

@@ -156,6 +156,35 @@ export interface Page {
     | HeroBlock
     | ImageTextSectionBlock
     | ImageGridHeroBlock
+    | {
+        /**
+         * ID para la sección, usado para enlazar desde el menú
+         */
+        sectionId?: string | null;
+        title: string;
+        description?: string | null;
+        /**
+         * Texto que aparece encima del título con un guion
+         */
+        comment?: string | null;
+        image: number | Media;
+        form: number | Form;
+        /**
+         * Añade un icono por cada campo del formulario, en el mismo orden.
+         */
+        fieldIcons?:
+          | {
+              /**
+               * Ejemplo: fa-solid fa-user, etc.
+               */
+              icon?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imgForm';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -990,6 +1019,24 @@ export interface PagesSelect<T extends boolean = true> {
         hero?: T | HeroBlockSelect<T>;
         imageTextSection?: T | ImageTextSectionBlockSelect<T>;
         imageGridHero?: T | ImageGridHeroBlockSelect<T>;
+        imgForm?:
+          | T
+          | {
+              sectionId?: T;
+              title?: T;
+              description?: T;
+              comment?: T;
+              image?: T;
+              form?: T;
+              fieldIcons?:
+                | T
+                | {
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

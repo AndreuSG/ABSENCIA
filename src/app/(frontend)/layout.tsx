@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'

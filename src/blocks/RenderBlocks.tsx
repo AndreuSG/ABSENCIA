@@ -9,7 +9,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
-import { AnimatedBlock } from '@/components/AnimatedBlock'
+import ImgForm from '@/blocks/ImgForm/Component.client'
 
 const blockComponents = {
   content: ContentBlock,
@@ -19,6 +19,7 @@ const blockComponents = {
   hero: HeroBlock,
   imageTextSection: ImageTextSectionBlock,
   imageGridHero: ImageGridHeroBlock,
+  imgForm: ImgForm
 }
 
 export const RenderBlocks: React.FC<{
