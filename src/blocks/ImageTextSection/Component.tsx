@@ -16,7 +16,7 @@ export const ImageTextSectionBlock: React.FC<BlockProps> = ({
   buttonLink,
 }) => {
   return (
-    <section className="container font-poppins py-16">
+    <section className="container font-poppins py-16 mb-16">
       <div className="flex flex-col md:flex-row items-center gap-12 animate-fade-in-up">
         {/* Imagen */}
         <div className={cn('md:w-1/2', { 'md:order-last': reverse })}>

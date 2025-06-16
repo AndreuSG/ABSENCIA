@@ -8,7 +8,7 @@ type Props = HeroBlockProps & { className?: string }
 export const HeroBlock: React.FC<Props> = ({ className, hero }) => {
   if (!hero) return null
   return (
-    <div className={className}>
+    <div className={`mb-16 ${className}`}>
       <RenderHero {...hero} />
     </div>
   )

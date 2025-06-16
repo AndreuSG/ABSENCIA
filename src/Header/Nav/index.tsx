@@ -12,16 +12,15 @@ export interface HeaderNavProps {
 
 export const HeaderNav: React.FC<HeaderNavProps> = ({ navItems }) => {
   const [open, setOpen] = useState(false)
-
   const items = navItems.navItems || []
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-sm shadow-md">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#fef9c3] shadow-md border-b-2 border-black">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Logo className="w-24" />
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-8 items-center font-bangers text-pop-red text-xl tracking-wider">
+        <nav className="hidden md:flex gap-8 items-center font-bangers text-[#c63a77] text-xl tracking-wider">
           {items.map((item) => {
             const link = item.link
             let href = '#'
@@ -31,8 +30,11 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ navItems }) => {
             } else if (link.type === 'reference' && link.reference?.value) {
               if (typeof link.reference.value === 'number') {
                 href = `/pages/${link.reference.value}`
-              } else if (typeof link.reference.value === 'object' && 'slug' in link.reference.value) {
-                link.reference.value.slug === 'home'? href = `/`: href = `/${link.reference.value.slug}`
+              } else if (
+                typeof link.reference.value === 'object' &&
+                'slug' in link.reference.value
+              ) {
+                href = link.reference.value.slug === 'home' ? `/` : `/${link.reference.value.slug}`
               }
             }
 
@@ -60,7 +62,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ navItems }) => {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden bg-pop-yellow text-pop-red font-bangers text-xl tracking-wider px-6 py-4 shadow-lg">
+        <div className="md:hidden bg-[#fef9c3] text-pop-red font-bangers text-xl tracking-wider px-6 py-4 shadow-lg border-t border-black">
           <nav className="flex flex-col gap-4">
             {items.map((item) => {
               const link = item.link
@@ -71,8 +73,12 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ navItems }) => {
               } else if (link.type === 'reference' && link.reference?.value) {
                 if (typeof link.reference.value === 'number') {
                   href = `/${link.reference.value}`
-                } else if (typeof link.reference.value === 'object' && 'slug' in link.reference.value) {
-                  link.reference.value.slug === 'home'? href = `/`: href = `/${link.reference.value.slug}`
+                } else if (
+                  typeof link.reference.value === 'object' &&
+                  'slug' in link.reference.value
+                ) {
+                  href =
+                    link.reference.value.slug === 'home' ? `/` : `/${link.reference.value.slug}`
                 }
               }
 

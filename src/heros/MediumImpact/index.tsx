@@ -6,7 +6,15 @@ import { CMSLink } from '@/components/Link'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
 
-export const MediumImpactHero: React.FC<Page['hero']> = ({
+type MediumImpactHeroProps = {
+  links?: { link: React.ComponentProps<typeof CMSLink> }[]
+  media?: any
+  richText?: any
+  title?: string
+  subtitle?: string
+}
+
+export const MediumImpactHero: React.FC<MediumImpactHeroProps> = ({
   links,
   media,
   richText,
@@ -32,7 +40,7 @@ export const MediumImpactHero: React.FC<Page['hero']> = ({
           </ul>
         )}
       </div>
-      <div className="relative container min-h-[45vh]">
+      <div className="container min-h-[45vh]">
         {media && typeof media === 'object' && (
           <div>
             <Media

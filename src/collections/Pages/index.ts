@@ -22,7 +22,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
-import ImgForm from '@/blocks/ImgForm/Component.client'
+import { StepFlowBlock } from '../../blocks/StepFlowBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -83,6 +83,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ImageTextSection,
                 ImageGridHero,
                 ImgFormBlock,
+                StepFlowBlock,
               ],
               required: true,
               admin: {

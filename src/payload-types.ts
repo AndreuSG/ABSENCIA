@@ -185,6 +185,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'imgForm';
       }
+    | StepFlowBlock
   )[];
   meta?: {
     title?: string | null;
@@ -750,6 +751,21 @@ export interface ImageGridHeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepFlowBlock".
+ */
+export interface StepFlowBlock {
+  title?: string | null;
+  steps: {
+    title: string;
+    description: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'stepFlow';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1037,6 +1053,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        stepFlow?: T | StepFlowBlockSelect<T>;
       };
   meta?:
     | T
@@ -1178,6 +1195,22 @@ export interface ImageGridHeroBlockSelect<T extends boolean = true> {
               label?: T;
               appearance?: T;
             };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepFlowBlock_select".
+ */
+export interface StepFlowBlockSelect<T extends boolean = true> {
+  title?: T;
+  steps?:
+    | T
+    | {
+        title?: T;
+        description?: T;
         id?: T;
       };
   id?: T;

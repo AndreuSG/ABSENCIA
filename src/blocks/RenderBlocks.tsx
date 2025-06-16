@@ -10,6 +10,7 @@ import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
 import ImgForm from '@/blocks/ImgForm/Component.client'
+import StepFlowBlock from './StepFlowBlock/Component'
 
 const blockComponents = {
   content: ContentBlock,
@@ -19,7 +20,8 @@ const blockComponents = {
   hero: HeroBlock,
   imageTextSection: ImageTextSectionBlock,
   imageGridHero: ImageGridHeroBlock,
-  imgForm: ImgForm
+  imgForm: ImgForm,
+  stepFlow: StepFlowBlock,
 }
 
 export const RenderBlocks: React.FC<{
@@ -28,7 +30,7 @@ export const RenderBlocks: React.FC<{
   if (!blocks || !Array.isArray(blocks) || blocks.length === 0) return null
 
   return (
-    <div className="space-y-32">
+    <div>
       {blocks.map((block, i) => {
         const Block = blockComponents[block.blockType]
         return Block ? <Block key={i} {...block} /> : null

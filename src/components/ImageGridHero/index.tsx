@@ -31,7 +31,7 @@ export const ImageGridHero: React.FC<ImageGridHeroProps> = ({
   primaryButton,
   secondaryButton,
 }) => (
-  <section className="w-full py-24 md:py-32 bg-[#d9f5e3] font-poppins relative overflow-hidden">
+  <section className="w-full py-24 md:py-32 bg-[#d9f5e3] font-poppins relative overflow-hidden pb-32">
     <svg
       viewBox="0 0 1440 60"
       preserveAspectRatio="none"

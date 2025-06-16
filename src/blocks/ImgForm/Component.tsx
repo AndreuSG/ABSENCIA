@@ -38,7 +38,11 @@ export const ImgFormPresentational: React.FC<ImgFormPresentationalProps> = ({
   isButtonDisabled,
 }) => {
   return (
-    <section id={sectionId} ref={containerRef} className="img-list mt-8">
+    <section
+      id={sectionId}
+      ref={containerRef}
+      className="img-list bg-[#d9f5e3] overflow-hidden pb-32"
+    >
       <div className="py-10">
         <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-8 min-h-0">
           {imageUrl1 && (
@@ -82,31 +86,33 @@ export const ImgFormPresentational: React.FC<ImgFormPresentationalProps> = ({
               }}
             >
               {formFields?.map((field, idx) => {
-                let iconName = fieldIcons?.[idx]?.icon;
-                const fieldName = 'name' in field ? field.name : '';
-                const errorClass = fieldName && inputErrors[fieldName] ? 'border-red-500' : 'border-gray-300';
-                const Renderer = fieldRenderers[field.blockType];
+                let iconName = fieldIcons?.[idx]?.icon
+                const fieldName = 'name' in field ? field.name : ''
+                const errorClass =
+                  fieldName && inputErrors[fieldName] ? 'border-red-500' : 'border-gray-300'
+                const Renderer = fieldRenderers[field.blockType]
 
-                const extraProps: { options?: any[] } = {};
+                const extraProps: { options?: any[] } = {}
                 if (field.blockType === 'country') {
-                  extraProps.options = field.options;
+                  extraProps.options = field.options
                 } else if (['select', 'state'].includes(field.blockType)) {
-                  extraProps.options = field.options || [];
+                  extraProps.options = field.options || []
                 }
 
                 // Evitar íconos para SelectField y NumberField
-                const shouldRenderIcon = !['select', 'number'].includes(field.blockType);
+                const shouldRenderIcon = !['select', 'number'].includes(field.blockType)
 
                 // Si no se debe renderizar el ícono, busca el siguiente campo que lo permita
                 if (!shouldRenderIcon && iconName) {
                   for (let i = idx + 1; i < formFields.length; i++) {
-                    const nextField = formFields[i];
-                    const nextFieldType = nextField.blockType;
+                    const nextField = formFields[i]
+                    const nextFieldType = nextField.blockType
                     if (!['select', 'number'].includes(nextFieldType)) {
-                      if (!fieldIcons![i]?.icon) { // Solo reasignar si el siguiente campo no tiene ícono
-                        fieldIcons![i] = { icon: iconName }; // Asigna el ícono al siguiente campo permitido
-                        iconName = undefined; // Elimina el ícono del campo actual
-                        break;
+                      if (!fieldIcons![i]?.icon) {
+                        // Solo reasignar si el siguiente campo no tiene ícono
+                        fieldIcons![i] = { icon: iconName } // Asigna el ícono al siguiente campo permitido
+                        iconName = undefined // Elimina el ícono del campo actual
+                        break
                       }
                     }
                   }
@@ -120,19 +126,20 @@ export const ImgFormPresentational: React.FC<ImgFormPresentationalProps> = ({
                     errorClass={errorClass}
                     {...extraProps}
                   />
-                ) : null;
+                ) : null
               })}
-              <button type="submit" disabled={isButtonDisabled}
-                className="flex justify-center items-center gap-2 px-6 py-2 text-base bg-[#232323] text-white rounded-lg shadow-md mb-5 mt-6 h-14 w-full hover:-translate-y-0.5 transition-transform duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+              <button
+                type="submit"
+                disabled={isButtonDisabled}
+                className="flex justify-center items-center gap-2 px-6 py-2 text-base bg-[#c63a77] hover:bg-[#a02c5e] text-white rounded-lg shadow-md mb-5 mt-6 h-14 w-full hover:-translate-y-0.5 transition-transform duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 {isLoading ? 'Enviando...' : 'Enviar'}
               </button>
-              {description && (
-                <p className="text-gray-500 text-sm mb-4">{description}</p>
-              )}
+              {description && <p className="text-gray-500 text-sm mb-4">{description}</p>}
             </form>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

@@ -127,3 +127,7 @@ html[data-theme='light'] {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
+
+.contact-form-bg {
+  background-color: #f5f5f5 !important;
+}

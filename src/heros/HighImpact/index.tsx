@@ -16,7 +16,7 @@ export const HighImpactHero: React.FC<HighImpactHeroProps> = ({
   mobile,
 }) => {
   return (
-    <section className="relative w-full min-h-[900px] overflow-hidden" data-theme="dark">
+    <section className="w-full min-h-[900px] overflow-hidden" data-theme="dark">
       {/* Imatge per a mòbil */}
       {mobile && (
         <Media
