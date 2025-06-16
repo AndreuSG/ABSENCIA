@@ -22,24 +22,12 @@ export const ImgDescrCollectClient: React.FC<ImgDescrCollectProps> = ({
   mediaCollection = [],
 }) => {
   const [images, setImages] = useState(mediaCollection);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (sectionId && sectionRef.current) {
-      sectionRef.current.id = sectionId;
-    }
-  }, [sectionId]);
 
   return (
-    <section className="img-list mt-8" ref={sectionRef}>
-      {images.map((item, index) => (
-        <div key={index} className="image-item">
-          <img src={item.media.url} alt={item.media.alt} />
-          {item.title && <h3>{item.title}</h3>}
-          {item.description && <p>{item.description}</p>}
-        </div>
-      ))}
-    </section>
+    <ImgDescrCollect
+      sectionId={sectionId}
+      mediaCollection={images}
+    />
   );
 };
 export default ImgDescrCollectClient;
