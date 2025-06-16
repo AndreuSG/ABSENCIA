@@ -11,6 +11,7 @@ import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
 import ImgForm from '@/blocks/ImgForm/Component.client'
 import StepFlowBlock from './StepFlowBlock/Component'
+import SpectacleCarouselBlock from '@/blocks/SpectacleCarousel/Component'
 
 const blockComponents = {
   content: ContentBlock,
@@ -21,6 +22,7 @@ const blockComponents = {
   imageTextSection: ImageTextSectionBlock,
   imageGridHero: ImageGridHeroBlock,
   imgForm: ImgForm,
+  spectacleCarousel: SpectacleCarouselBlock,
   stepFlow: StepFlowBlock,
 }
 

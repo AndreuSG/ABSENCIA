@@ -185,6 +185,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'imgForm';
       }
+    | SpectacleCarouselBlock
     | StepFlowBlock
   )[];
   meta?: {
@@ -751,6 +752,23 @@ export interface ImageGridHeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SpectacleCarouselBlock".
+ */
+export interface SpectacleCarouselBlock {
+  title?: string | null;
+  slides?:
+    | {
+        image: number | Media;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'spectacleCarousel';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "StepFlowBlock".
  */
 export interface StepFlowBlock {
@@ -1053,6 +1071,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        spectacleCarousel?: T | SpectacleCarouselBlockSelect<T>;
         stepFlow?: T | StepFlowBlockSelect<T>;
       };
   meta?:
@@ -1195,6 +1214,22 @@ export interface ImageGridHeroBlockSelect<T extends boolean = true> {
               label?: T;
               appearance?: T;
             };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SpectacleCarouselBlock_select".
+ */
+export interface SpectacleCarouselBlockSelect<T extends boolean = true> {
+  title?: T;
+  slides?:
+    | T
+    | {
+        image?: T;
+        description?: T;
         id?: T;
       };
   id?: T;

@@ -23,6 +23,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { StepFlowBlock } from '../../blocks/StepFlowBlock/config'
+import { SpectacleCarousel } from '../../blocks/SpectacleCarousel/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -83,6 +84,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ImageTextSection,
                 ImageGridHero,
                 ImgFormBlock,
+                SpectacleCarousel,
                 StepFlowBlock,
               ],
               required: true,
