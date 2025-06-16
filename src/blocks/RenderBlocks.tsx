@@ -11,6 +11,7 @@ import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
 import ImgForm from '@/blocks/ImgForm/Component.client'
 import StepFlowBlock from './StepFlowBlock/Component'
+import StepFlowImageBlock from './StepFlowImageBlock/Component'
 
 const blockComponents = {
   content: ContentBlock,
@@ -22,6 +23,7 @@ const blockComponents = {
   imageGridHero: ImageGridHeroBlock,
   imgForm: ImgForm,
   stepFlow: StepFlowBlock,
+  stepFlowImage: StepFlowImageBlock,
 }
 
 export const RenderBlocks: React.FC<{

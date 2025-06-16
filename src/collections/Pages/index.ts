@@ -10,6 +10,7 @@ import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
 import { ImageGridHero } from '../../blocks/ImageGridHero/config'
 import { ImgFormBlock } from '../../blocks/ImgForm/config'
+import { StepFlowImageBlock } from '../../blocks/StepFlowImageBlock/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -84,6 +85,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ImageGridHero,
                 ImgFormBlock,
                 StepFlowBlock,
+                StepFlowImageBlock,
               ],
               required: true,
               admin: {

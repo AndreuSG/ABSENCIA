@@ -186,6 +186,7 @@ export interface Page {
         blockType: 'imgForm';
       }
     | StepFlowBlock
+    | StepFlowImageBlock
   )[];
   meta?: {
     title?: string | null;
@@ -765,6 +766,22 @@ export interface StepFlowBlock {
   blockType: 'stepFlow';
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema`
+ * via the `definition` "StepFlowImageBlock".
+ */
+export interface StepFlowImageBlock {
+  title?: string | null;
+  steps: {
+    title: string;
+    description: string;
+    id?: string | null;
+  }[];
+  image: number | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'stepFlowImage';
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
@@ -1054,6 +1071,7 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
         stepFlow?: T | StepFlowBlockSelect<T>;
+        stepFlowImage?: T | StepFlowImageBlockSelect<T>;
       };
   meta?:
     | T
@@ -1213,6 +1231,23 @@ export interface StepFlowBlockSelect<T extends boolean = true> {
         description?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema`.
+ * via the `definition` "StepFlowImageBlock_select".
+ */
+export interface StepFlowImageBlockSelect<T extends boolean = true> {
+  title?: T;
+  steps?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  image?: T;
   id?: T;
   blockName?: T;
 }
