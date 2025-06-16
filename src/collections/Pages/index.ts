@@ -10,6 +10,7 @@ import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
 import { ImageGridHero } from '../../blocks/ImageGridHero/config'
 import { ImgFormBlock } from '../../blocks/ImgForm/config'
+import { ImgDescrCollect } from './../../blocks/ImgDescrCollect/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -86,6 +87,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 ImgFormBlock,
                 SpectacleCarousel,
                 StepFlowBlock,
+                ImgDescrCollect,
               ],
               required: true,
               admin: {
