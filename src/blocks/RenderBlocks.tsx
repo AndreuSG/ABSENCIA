@@ -9,6 +9,8 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
+import { ImgDescrCollect } from '@/blocks/ImgDescrCollect/Component'
+
 import { AnimatedBlock } from '@/components/AnimatedBlock'
 
 const blockComponents = {
@@ -19,6 +21,7 @@ const blockComponents = {
   hero: HeroBlock,
   imageTextSection: ImageTextSectionBlock,
   imageGridHero: ImageGridHeroBlock,
+  imgDescrCollect: ImgDescrCollect,
 }
 
 export const RenderBlocks: React.FC<{

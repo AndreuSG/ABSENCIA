@@ -156,6 +156,7 @@ export interface Page {
     | HeroBlock
     | ImageTextSectionBlock
     | ImageGridHeroBlock
+    | ImagenesConDescripcion
   )[];
   meta?: {
     title?: string | null;
@@ -721,6 +722,24 @@ export interface ImageGridHeroBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Imagenes con Descripción".
+ */
+export interface ImagenesConDescripcion {
+  sectionId: string;
+  mediaCollection?:
+    | {
+        media: number | Media;
+        title?: string | null;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'imgDescrCollect';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -990,6 +1009,7 @@ export interface PagesSelect<T extends boolean = true> {
         hero?: T | HeroBlockSelect<T>;
         imageTextSection?: T | ImageTextSectionBlockSelect<T>;
         imageGridHero?: T | ImageGridHeroBlockSelect<T>;
+        imgDescrCollect?: T | ImagenesConDescripcionSelect<T>;
       };
   meta?:
     | T
@@ -1135,6 +1155,23 @@ export interface ImageGridHeroBlockSelect<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Imagenes con Descripción_select".
+ */
+export interface ImagenesConDescripcionSelect {
+  sectionId?: boolean;
+  mediaCollection?:
+    | boolean
+    | {
+        media?: boolean;
+        title?: boolean;
+        description?: boolean;
+        id?: boolean;
+      };
+  id?: boolean;
+  blockName?: boolean;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1559,20 +1596,52 @@ export interface Header {
   id: number;
   navItems?:
     | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
+        linkType?: ('text' | 'dropdown') | null;
+        link?: {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | ({
+                  relationTo: 'pages';
+                  value: number | Page;
+                } | null)
+              | ({
+                  relationTo: 'posts';
+                  value: number | Post;
+                } | null);
+            url?: string | null;
+            label: string;
+            /**
+             * Choose how the link should be rendered.
+             */
+            appearance?: ('default' | 'outline') | null;
+          };
+        };
+        dropdown?: {
           label: string;
+          dropdownLinks: {
+            link: {
+              type?: ('reference' | 'custom') | null;
+              newTab?: boolean | null;
+              reference?:
+                | ({
+                    relationTo: 'pages';
+                    value: number | Page;
+                  } | null)
+                | ({
+                    relationTo: 'posts';
+                    value: number | Post;
+                  } | null);
+              url?: string | null;
+              label: string;
+              /**
+               * Choose how the link should be rendered.
+               */
+              appearance?: ('default' | 'outline') | null;
+            };
+            id?: string | null;
+          }[];
         };
         id?: string | null;
       }[]
@@ -1617,14 +1686,40 @@ export interface HeaderSelect<T extends boolean = true> {
   navItems?:
     | T
     | {
+        linkType?: T;
         link?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+            };
+        dropdown?:
+          | T
+          | {
               label?: T;
+              dropdownLinks?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
             };
         id?: T;
       };

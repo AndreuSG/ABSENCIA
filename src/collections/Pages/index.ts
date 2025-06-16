@@ -9,6 +9,7 @@ import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { Hero } from '../../blocks/Hero/config'
 import { ImageTextSection } from '../../blocks/ImageTextSection/config'
 import { ImageGridHero } from '../../blocks/ImageGridHero/config'
+import { ImgDescrCollect } from './../../blocks/ImgDescrCollect/config';
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -80,6 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 Hero,
                 ImageTextSection,
                 ImageGridHero,
+                ImgDescrCollect
               ],
               required: true,
               admin: {
