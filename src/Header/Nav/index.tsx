@@ -45,10 +45,10 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ navItems }) => {
                 target={link.newTab ? '_blank' : '_self'}
                 className="relative group hover:-translate-y-1 transition-transform"
               >
-                <span className="group-hover:text-pop-magenta transition-colors duration-300">
+                <span className="group-hover:text-pop-magenta group-focus:text-pop-magenta transition-colors duration-300">
                   {link.label}
                 </span>
-                <span className="block h-1 w-0 bg-pop-magenta group-hover:w-full transition-all duration-300"></span>
+                <span className="block h-1 w-0 bg-pop-magenta group-hover:w-full group-focus:w-full transition-all duration-300"></span>
               </Link>
             )
           })}
