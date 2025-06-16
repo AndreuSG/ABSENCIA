@@ -14,7 +14,7 @@ export const StepFlowBlock: React.FC<StepFlowBlockProps> = ({ title, steps }) =>
   if (steps.length < 3 || steps.length > 6) return null
 
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-16">
+    <section className="w-full max-w-5xl mx-auto px-4 py-16 font-poppins mt-32">
       {title && <h2 className="text-3xl font-bold text-center mb-12">{title}</h2>}
 
       {/*  ➜  fila horizontal en desktop, columna en móvil  */}
@@ -23,7 +23,7 @@ export const StepFlowBlock: React.FC<StepFlowBlockProps> = ({ title, steps }) =>
           <React.Fragment key={idx}>
             {/* Bolita */}
             <div className="relative flex flex-col items-center text-center mb-12 md:mb-0 md:flex-1 z-10">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-lg font-bold mb-4">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#c63a77] text-white text-lg font-bold mb-4">
                 {idx + 1}
               </div>
               <h3 className="font-semibold mb-2">{step.title}</h3>
