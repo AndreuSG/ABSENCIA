@@ -10,7 +10,7 @@ import { HeroBlock } from '@/blocks/Hero/Component'
 import { ImageTextSectionBlock } from '@/blocks/ImageTextSection/Component'
 import ImageGridHeroBlock from '@/blocks/ImageGridHero/Component'
 import { ImgDescrCollectClient } from '@/blocks/ImgDescrCollect/Component.client'
-
+import { LogosList } from '@/blocks/LogosList/Component.client'
 import ImgForm from '@/blocks/ImgForm/Component.client'
 import StepFlowBlock from './StepFlowBlock/Component'
 import SpectacleCarouselBlock from '@/blocks/SpectacleCarousel/Component'
@@ -27,6 +27,7 @@ const blockComponents = {
   spectacleCarousel: SpectacleCarouselBlock,
   stepFlow: StepFlowBlock,
   imgDescrCollect: ImgDescrCollectClient,
+  logosList: LogosList,
 }
 
 export const RenderBlocks: React.FC<{

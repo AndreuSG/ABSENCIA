@@ -188,6 +188,15 @@ export interface Page {
     | SpectacleCarouselBlock
     | StepFlowBlock
     | ImagenesConDescripcion
+    | {
+        logos: {
+          imagen: number | Media;
+          id?: string | null;
+        }[];
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'logosList';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1093,6 +1102,18 @@ export interface PagesSelect<T extends boolean = true> {
         spectacleCarousel?: T | SpectacleCarouselBlockSelect<T>;
         stepFlow?: T | StepFlowBlockSelect<T>;
         imgDescrCollect?: T | ImagenesConDescripcionSelect<T>;
+        logosList?:
+          | T
+          | {
+              logos?:
+                | T
+                | {
+                    imagen?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T
