@@ -1,0 +1,93 @@
+.animated-title-block {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  --bg-color: hsl(var(--background));
+}
+
+.title-swiper-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.title-swiper-container::before,
+.title-swiper-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.title-swiper-container::before {
+  background-image: url('/assets/gifts/confetti-left.gif');
+  background-repeat: repeat;
+  background-size: auto;
+  left: 0;
+  -webkit-mask-image: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+  mask-image: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+
+.title-swiper-container::after {
+  background-image: url('/assets/gifts/confetti-right.gif');
+  background-repeat: repeat;
+  background-size: auto;
+  right: 0;
+  -webkit-mask-image: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+  mask-image: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+}
+
+.title-swiper-wrapper {
+  white-space: nowrap;
+  display: flex;
+  width: max-content;
+}
+
+.title-swiper {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+@keyframes titleScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+
+    transform: translateX(-50%);
+  }
+}
+
+.title-swiper-wrapper {
+  display: flex;
+  animation: titleScroll var(--scroll-duration, 20s) linear infinite;
+}
+
+@media (max-width: 767px) {
+  .title-swiper-wrapper {
+    --scroll-duration: 15s;
+  }
+  .title-swiper h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .title-swiper-wrapper {
+    --scroll-duration: 25s;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-swiper-wrapper {
+    --scroll-duration: 35s;
+  }
+}
+
+.title-group {
+  display: flex;
+  white-space: nowrap;
+}
