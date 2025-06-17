@@ -188,6 +188,23 @@ export interface Page {
     | SpectacleCarouselBlock
     | StepFlowBlock
     | ImagenesConDescripcion
+    | {
+        sectionId: string;
+        title: string;
+        media?: (number | null) | Media;
+        imagePositionVertical?: ('start' | 'center' | 'end') | null;
+        imagePositionHorizontal?: ('start' | 'center' | 'end') | null;
+        dataCollection?:
+          | {
+              title?: string | null;
+              description?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'orderData';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1093,6 +1110,24 @@ export interface PagesSelect<T extends boolean = true> {
         spectacleCarousel?: T | SpectacleCarouselBlockSelect<T>;
         stepFlow?: T | StepFlowBlockSelect<T>;
         imgDescrCollect?: T | ImagenesConDescripcionSelect<T>;
+        orderData?:
+          | T
+          | {
+              sectionId?: T;
+              title?: T;
+              media?: T;
+              imagePositionVertical?: T;
+              imagePositionHorizontal?: T;
+              dataCollection?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T
