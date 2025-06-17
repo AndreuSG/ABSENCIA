@@ -188,6 +188,22 @@ export interface Page {
     | SpectacleCarouselBlock
     | StepFlowBlock
     | ImagenesConDescripcion
+    | {
+        title: string;
+        animation?: 'swiper' | null;
+        /**
+         * Elija varios colores para usar en el texto
+         */
+        textColors?:
+          | {
+              color: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'animatedTitleBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1093,6 +1109,20 @@ export interface PagesSelect<T extends boolean = true> {
         spectacleCarousel?: T | SpectacleCarouselBlockSelect<T>;
         stepFlow?: T | StepFlowBlockSelect<T>;
         imgDescrCollect?: T | ImagenesConDescripcionSelect<T>;
+        animatedTitleBlock?:
+          | T
+          | {
+              title?: T;
+              animation?: T;
+              textColors?:
+                | T
+                | {
+                    color?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

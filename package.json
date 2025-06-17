@@ -25,6 +25,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@innovixx/payload-color-picker-field": "^2.0.2",
     "@payloadcms/admin-bar": "3.40.0",
     "@payloadcms/db-postgres": "3.40.0",
     "@payloadcms/live-preview-react": "3.40.0",
