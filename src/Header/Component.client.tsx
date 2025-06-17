@@ -35,6 +35,6 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ navItems }) => {
       <div className="py-8 flex items-center justify-between animate-in fade-in duration-700">
         <HeaderNav navItems={navItems}/>
       </div>
-    </header>
+    </div>
   )
 }

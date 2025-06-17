@@ -14,6 +14,7 @@ import { ImgDescrCollectClient } from '@/blocks/ImgDescrCollect/Component.client
 import ImgForm from '@/blocks/ImgForm/Component.client'
 import StepFlowBlock from './StepFlowBlock/Component'
 import SpectacleCarouselBlock from '@/blocks/SpectacleCarousel/Component'
+import { OrderDataClient } from '@/blocks/OrderData/Component.client'
 
 const blockComponents = {
   content: ContentBlock,
@@ -27,6 +28,7 @@ const blockComponents = {
   spectacleCarousel: SpectacleCarouselBlock,
   stepFlow: StepFlowBlock,
   imgDescrCollect: ImgDescrCollectClient,
+  orderData: OrderDataClient
 }
 
 export const RenderBlocks: React.FC<{
